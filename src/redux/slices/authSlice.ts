@@ -29,9 +29,6 @@ export const login = createAsyncThunk(
     { rejectWithValue },
   ) => {
     try {
-      // TODO: Replace with actual API call
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
       // Mock user data - replace with real API response
       const mockUser: User = {
         id: '1',
@@ -53,9 +50,6 @@ export const signup = createAsyncThunk(
     { rejectWithValue },
   ) => {
     try {
-      // TODO: Replace with actual API call
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
       const mockUser: User = {
         id: '2',
         email,
@@ -92,6 +86,7 @@ const authSlice = createSlice({
       })
       .addCase(login.fulfilled, (state, action) => {
         state.isLoading = false;
+        console.log('action.payload', action.payload);
         state.user = action.payload;
         state.isAuthenticated = true;
         state.error = null;

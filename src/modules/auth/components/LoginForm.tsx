@@ -10,7 +10,7 @@ import {
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/shared/context/AuthContext';
+import { useAuth } from '@/modules/auth/context';
 
 export const LoginForm: React.FC = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export const LoginForm: React.FC = () => {
     }
 
     try {
-      await login(email, password);
+      login(email, password);
       navigate('/dashboard');
     } catch (err) {
       setError('Login failed. Please try again.');

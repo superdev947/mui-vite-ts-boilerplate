@@ -19,7 +19,7 @@ const AdminReportsPage = lazy(
   () => import('@/pages/adminReports/AdminReportsPage'),
 );
 
-const RouteLoader = () => (
+export const Spinner = () => (
   <Box
     sx={{
       display: 'flex',
@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <HomePage />
           </Suspense>
         ),
@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
       {
         path: 'login',
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <LoginPage />
           </Suspense>
         ),
@@ -57,7 +57,7 @@ export const router = createBrowserRouter([
       {
         path: 'signup',
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <SignupPage />
           </Suspense>
         ),
@@ -76,7 +76,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <DashboardPage />
           </Suspense>
         ),
@@ -84,7 +84,7 @@ export const router = createBrowserRouter([
       {
         path: 'profile',
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <ProfilePage />
           </Suspense>
         ),
@@ -92,7 +92,7 @@ export const router = createBrowserRouter([
       {
         path: 'settings',
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <SettingsPage />
           </Suspense>
         ),
@@ -111,7 +111,7 @@ export const router = createBrowserRouter([
       {
         path: 'users',
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <AdminUsersPage />
           </Suspense>
         ),
@@ -119,7 +119,7 @@ export const router = createBrowserRouter([
       {
         path: 'reports',
         element: (
-          <Suspense fallback={<RouteLoader />}>
+          <Suspense fallback={<Spinner />}>
             <AdminReportsPage />
           </Suspense>
         ),

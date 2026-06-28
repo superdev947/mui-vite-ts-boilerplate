@@ -1,7 +1,7 @@
 import { Box, Button, Card, TextField } from '@mui/material';
 import React, { useState } from 'react';
 
-import { useAuth } from '@/shared/context/AuthContext';
+import { useAuth } from '@/modules/auth/context';
 
 export const ProfileForm: React.FC = () => {
   const { user } = useAuth();

@@ -10,7 +10,7 @@ import {
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/shared/context/AuthContext';
+import { useAuth } from '@/modules/auth/context';
 
 export const SignupForm: React.FC = () => {
   const navigate = useNavigate();

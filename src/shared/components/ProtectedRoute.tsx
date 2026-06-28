@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-import { useAuth } from '@/shared/context/AuthContext';
+import { useAuth } from '@/modules/auth/context';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -24,8 +24,6 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
     const hasRequiredRole = user?.roles.some((role) =>
       requiredRoles.includes(role),
     );
-
-    console.log(hasRequiredRole, user);
 
     if (!hasRequiredRole) {
       return <Navigate to="/dashboard" replace />;

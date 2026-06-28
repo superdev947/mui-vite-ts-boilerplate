@@ -15,7 +15,7 @@
       "@/shared/*": ["src/shared/*"],
       "@/pages/*": ["src/pages/*"],
       "@/modules/*": ["src/modules/*"],
-      "@/config/*": ["src/router/*"]
+      "@/config/*": ["src/modules/app/router/*"]
     },
 
     "resolveJsonModule": true,

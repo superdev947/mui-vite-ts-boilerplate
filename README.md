@@ -39,6 +39,8 @@ bun run build
 - **Material UI** - Comprehensive component library with Material Design
 - **Vite** - Next generation frontend tooling with lightning fast HMR
 - **TypeScript** - Full type safety for better development experience
+- **Redux** - Predictable state management for complex applications
+- **React Router** - Client-side routing for single-page applications
 - **Emotion** - CSS-in-JS styling solution (Material UI's default)
 - **ESLint & Prettier** - Code quality and formatting
 - **Husky** - Git hooks for code quality
@@ -94,6 +96,26 @@ src/
   - **constants/** - Configuration and constants
   - **styles/** - Global theme and styles
 
+## State Management
+
+This boilerplate includes **Redux** for centralized state management:
+
+- **Redux Store** - Centralized application state
+- **Redux Slices** - Modular state management with Redux Toolkit
+- **Authentication Context** - Redux-integrated auth state and routing
+- **Theme Management** - Global theme state via Redux
+
+Redux state can be organized in the `modules/` directory alongside feature code. Use Redux DevTools for debugging.
+
+## Routing
+
+The application uses **React Router** for client-side navigation:
+
+- Declarative route definitions
+- Protected routes via authentication middleware
+- Nested routing support for complex page hierarchies
+- Lazy-loaded route components for code splitting
+
 ## Available Scripts
 
 - `bun run dev` - Start development server
@@ -102,8 +124,24 @@ src/
 - `bun run lint` - Run ESLint
 - `bun run format` - Format code with Prettier
 
+## Contributing
+
+Contributions are welcome! Please follow these guidelines:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 ## Learn More
 
 - [Material UI Documentation](https://mui.com)
 - [Vite Documentation](https://vite.dev)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Redux Documentation](https://redux.js.org/)
+- [React Router Documentation](https://reactrouter.com/)
