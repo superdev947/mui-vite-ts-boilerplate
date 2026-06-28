@@ -47,12 +47,52 @@ bun run build
 
 ```
 src/
-├── components/    - Reusable React components
-├── pages/        - Page components
-├── styles/       - Global styles
-├── types/        - TypeScript type definitions
-└── App.tsx       - Root component
+├── modules/                    # Feature-based modules
+│   ├── auth/                   # Example: Auth feature
+│   │   ├── components/         # Auth-specific components
+│   │   ├── hooks/              # Auth-specific hooks
+│   │   ├── types/              # Auth-specific types
+│   │   └── index.ts            # Module exports
+│   └── [feature-name]/         # Other feature modules
+│
+├── pages/                      # Page/route components
+│   ├── LoginPage.tsx
+│   ├── DashboardPage.tsx
+│   └── NotFoundPage.tsx
+│
+├── shared/                     # Shared across all modules
+│   ├── components/             # Reusable UI components
+│   ├── hooks/                  # Shared custom hooks
+│   ├── types/                  # Global TypeScript types
+│   ├── utils/                  # Helper functions & utilities
+│   ├── constants/              # App constants & configuration
+│   ├── styles/                 # Global styles
+│   └── index.ts                # Shared exports
+│
+├── App.tsx                     # Root component
+├── main.tsx                    # Application entry point
+└── vite-env.d.ts              # Vite environment types
 ```
+
+### Structure Guidelines
+
+- **modules/** - Feature-based modules organized by domain (auth, dashboard, etc.)
+  - Each module should have its own components, hooks, and types
+  - Export public API via `index.ts` for clean imports
+  - Keep modules independent and reusable
+
+- **pages/** - Route/page components that compose features
+  - Maps to application routes
+  - Combines multiple modules and features
+  - Handles page-level layout and logic
+
+- **shared/** - Shared code used across modules
+  - **components/** - Generic UI components (buttons, modals, etc.)
+  - **hooks/** - Reusable React hooks (useLocalStorage, useFetch, etc.)
+  - **types/** - Global TypeScript types and interfaces
+  - **utils/** - Helper functions and utilities
+  - **constants/** - Configuration and constants
+  - **styles/** - Global theme and styles
 
 ## Available Scripts
 
