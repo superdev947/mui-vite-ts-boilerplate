@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 
-import { createTheme } from '@/shared/theme';
+import { createTheme } from '@/shared/theme/theme';
 
 type ThemeMode = 'light' | 'dark';
 type UserPreference = 'light' | 'dark' | 'system';

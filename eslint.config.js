@@ -5,7 +5,14 @@ import ts from 'typescript-eslint';
 
 export default [
   {
-    ignores: ['dist', 'node_modules', 'build', 'coverage', '.vite', 'vite.config.ts'],
+    ignores: [
+      'dist',
+      'node_modules',
+      'build',
+      'coverage',
+      '.vite',
+      'vite.config.ts',
+    ],
   },
   js.configs.recommended,
   ...ts.configs.recommended,
@@ -30,7 +37,6 @@ export default [
     },
     rules: {
       'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',

@@ -1,7 +1,7 @@
 import { Brightness4, Brightness7 } from '@mui/icons-material';
 import { IconButton, Tooltip } from '@mui/material';
 
-import { useTheme } from '@/shared/hooks';
+import { useTheme } from '@/shared/hooks/useTheme';
 
 export const ThemeToggle: React.FC = () => {
   const { mode, toggleTheme } = useTheme();

@@ -13,8 +13,8 @@ import {
 import React from 'react';
 import { Outlet, Link as RouterLink, useNavigate } from 'react-router-dom';
 
-import { ThemeToggle } from '@/shared/components';
-import { useAuth } from '@/shared/context';
+import { ThemeToggle } from '@/shared/components/ThemeToggle';
+import { useAuth } from '@/shared/context/AuthContext';
 
 const DRAWER_WIDTH = 240;
 
