@@ -1,6 +1,7 @@
-import { useAuth } from '@/shared/context';
 import { Box, Button, Card, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
+
+import { useAuth } from '@/shared/context';
 
 export const ProfilePage: React.FC = () => {
   const { user } = useAuth();

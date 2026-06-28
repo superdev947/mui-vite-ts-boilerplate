@@ -50,7 +50,10 @@ export const SettingsPage: React.FC = () => {
 
           <FormControlLabel
             control={
-              <Switch checked={settings.darkMode} onChange={() => handleToggle('darkMode')} />
+              <Switch
+                checked={settings.darkMode}
+                onChange={() => handleToggle('darkMode')}
+              />
             }
             label={
               <Box>

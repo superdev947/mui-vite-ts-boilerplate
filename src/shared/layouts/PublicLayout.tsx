@@ -1,4 +1,11 @@
-import { AppBar, Box, Button, Container, Toolbar, Typography } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 import { Outlet, Link as RouterLink } from 'react-router-dom';
 
@@ -39,7 +46,11 @@ export const PublicLayout: React.FC = () => {
         }}
       >
         <Container maxWidth="lg">
-          <Typography variant="body2" align="center" sx={{ color: 'text.secondary' }}>
+          <Typography
+            variant="body2"
+            align="center"
+            sx={{ color: 'text.secondary' }}
+          >
             {'Copyright © '}
             <span>My App</span> {new Date().getFullYear()}.
           </Typography>

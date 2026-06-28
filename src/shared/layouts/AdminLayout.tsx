@@ -1,4 +1,3 @@
-import { useAuth } from '@/shared/context';
 import {
   AppBar,
   Box,
@@ -13,6 +12,9 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { Outlet, Link as RouterLink, useNavigate } from 'react-router-dom';
+
+import { ThemeToggle } from '@/shared/components';
+import { useAuth } from '@/shared/context';
 
 const DRAWER_WIDTH = 240;
 
@@ -35,15 +37,21 @@ export const AdminLayout: React.FC = () => {
       {/* App Bar */}
       <AppBar
         position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, bgcolor: 'error.main' }}
+        sx={{
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+          bgcolor: 'error.main',
+        }}
       >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Admin Panel
           </Typography>
-          <Button color="inherit" onClick={handleLogout}>
-            Logout
-          </Button>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <ThemeToggle />
+            <Button color="inherit" onClick={handleLogout}>
+              Logout
+            </Button>
+          </Box>
         </Toolbar>
       </AppBar>
 

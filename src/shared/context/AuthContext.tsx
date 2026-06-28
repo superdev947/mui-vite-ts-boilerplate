@@ -1,4 +1,10 @@
-import React, { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+import React, {
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 
 export interface User {
   id: string;
@@ -16,9 +22,13 @@ interface AuthContextType {
   signup: (email: string, password: string, name: string) => Promise<void>;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(
+  undefined,
+);
 
-export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -47,23 +57,26 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setUser(null);
   }, []);
 
-  const signup = useCallback(async (email: string, _password: string, name: string) => {
-    setIsLoading(true);
-    try {
-      // TODO: Replace with actual API call
-      await new Promise((resolve) => setTimeout(resolve, 500));
+  const signup = useCallback(
+    async (email: string, _password: string, name: string) => {
+      setIsLoading(true);
+      try {
+        // TODO: Replace with actual API call
+        await new Promise((resolve) => setTimeout(resolve, 500));
 
-      const mockUser: User = {
-        id: '2',
-        email,
-        name,
-        roles: ['user'],
-      };
-      setUser(mockUser);
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+        const mockUser: User = {
+          id: '2',
+          email,
+          name,
+          roles: ['user'],
+        };
+        setUser(mockUser);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [],
+  );
 
   const value: AuthContextType = {
     user,

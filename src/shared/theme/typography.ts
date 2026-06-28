@@ -1,0 +1,90 @@
+import { TypographyOptions } from '@mui/material/styles/createTypography';
+
+export const typographyOptions: TypographyOptions = {
+  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  fontSize: 14,
+  fontWeightLight: 300,
+  fontWeightRegular: 400,
+  fontWeightMedium: 500,
+  fontWeightBold: 700,
+  h1: {
+    fontSize: '32px',
+    fontWeight: 500,
+    lineHeight: 1.235,
+    letterSpacing: '-0.015625em',
+  },
+  h2: {
+    fontSize: '28px',
+    fontWeight: 500,
+    lineHeight: 1.286,
+    letterSpacing: '0em',
+  },
+  h3: {
+    fontSize: '24px',
+    fontWeight: 500,
+    lineHeight: 1.333,
+    letterSpacing: '0em',
+  },
+  h4: {
+    fontSize: '20px',
+    fontWeight: 500,
+    lineHeight: 1.4,
+    letterSpacing: '0.0125em',
+  },
+  h5: {
+    fontSize: '16px',
+    fontWeight: 500,
+    lineHeight: 1.5,
+    letterSpacing: '0em',
+  },
+  h6: {
+    fontSize: '14px',
+    fontWeight: 500,
+    lineHeight: 1.57,
+    letterSpacing: '0.0125em',
+  },
+  body1: {
+    fontSize: '16px',
+    fontWeight: 400,
+    lineHeight: 1.5,
+    letterSpacing: '0.03125em',
+  },
+  body2: {
+    fontSize: '14px',
+    fontWeight: 400,
+    lineHeight: 1.43,
+    letterSpacing: '0.0178571429em',
+  },
+  subtitle1: {
+    fontSize: '16px',
+    fontWeight: 500,
+    lineHeight: 1.5,
+    letterSpacing: '0.009375em',
+  },
+  subtitle2: {
+    fontSize: '14px',
+    fontWeight: 500,
+    lineHeight: 1.57,
+    letterSpacing: '0.0071428571em',
+  },
+  button: {
+    fontSize: '14px',
+    fontWeight: 600,
+    lineHeight: 1.75,
+    letterSpacing: '0.0892857143em',
+    textTransform: 'none',
+  },
+  caption: {
+    fontSize: '12px',
+    fontWeight: 400,
+    lineHeight: 1.66,
+    letterSpacing: '0.0333333333em',
+  },
+  overline: {
+    fontSize: '11px',
+    fontWeight: 600,
+    lineHeight: 1.82,
+    letterSpacing: '0.1666666667em',
+    textTransform: 'uppercase',
+  },
+};

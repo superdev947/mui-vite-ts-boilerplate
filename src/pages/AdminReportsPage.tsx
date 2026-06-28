@@ -25,7 +25,12 @@ export const AdminReportsPage: React.FC = () => {
         <Typography variant="body2" color="textSecondary" align="center">
           This is where you can integrate charts and visualizations.
         </Typography>
-        <Typography variant="body2" color="textSecondary" align="center" sx={{ mt: 2 }}>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          align="center"
+          sx={{ mt: 2 }}
+        >
           Consider using libraries like:
           <br />
           - Recharts

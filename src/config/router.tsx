@@ -1,8 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-// Layouts
-import { AdminLayout, DashboardLayout, PublicLayout } from '@/shared/layouts';
-
 // Pages
 import {
   AdminReportsPage,
@@ -15,9 +12,10 @@ import {
   SettingsPage,
   SignupPage,
 } from '@/pages';
-
 // Components
 import { ProtectedRoute } from '@/shared/components';
+// Layouts
+import { AdminLayout, DashboardLayout, PublicLayout } from '@/shared/layouts';
 
 export const router = createBrowserRouter([
   {

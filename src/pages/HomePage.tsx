@@ -1,7 +1,8 @@
-import { useAuth } from '@/shared/context';
 import { Box, Button, Container, Typography } from '@mui/material';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+
+import { useAuth } from '@/shared/context';
 
 export const HomePage: React.FC = () => {
   const { isAuthenticated } = useAuth();
@@ -18,7 +19,11 @@ export const HomePage: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        <Typography variant="h2" component="h1" sx={{ mb: 2, fontWeight: 'bold' }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{ mb: 2, fontWeight: 'bold' }}
+        >
           Welcome to Our App
         </Typography>
 
@@ -29,15 +34,30 @@ export const HomePage: React.FC = () => {
         <Box sx={{ display: 'flex', gap: 2, mt: 4 }}>
           {!isAuthenticated ? (
             <>
-              <Button variant="contained" size="large" component={RouterLink} to="/login">
+              <Button
+                variant="contained"
+                size="large"
+                component={RouterLink}
+                to="/login"
+              >
                 Login
               </Button>
-              <Button variant="outlined" size="large" component={RouterLink} to="/signup">
+              <Button
+                variant="outlined"
+                size="large"
+                component={RouterLink}
+                to="/signup"
+              >
                 Sign Up
               </Button>
             </>
           ) : (
-            <Button variant="contained" size="large" component={RouterLink} to="/dashboard">
+            <Button
+              variant="contained"
+              size="large"
+              component={RouterLink}
+              to="/dashboard"
+            >
               Go to Dashboard
             </Button>
           )}

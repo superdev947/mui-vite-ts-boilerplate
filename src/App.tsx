@@ -1,12 +1,15 @@
-import { router } from '@/config';
-import { AuthProvider } from '@/shared/context';
 import { RouterProvider } from 'react-router-dom';
+
+import { router } from '@/config';
+import { AuthProvider, ThemeProvider } from '@/shared/context';
 
 function App() {
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

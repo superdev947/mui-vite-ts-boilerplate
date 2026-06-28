@@ -1,4 +1,3 @@
-import { useAuth } from '@/shared/context';
 import {
   AppBar,
   Box,
@@ -13,6 +12,9 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { Outlet, Link as RouterLink, useNavigate } from 'react-router-dom';
+
+import { ThemeToggle } from '@/shared/components';
+import { useAuth } from '@/shared/context';
 
 const DRAWER_WIDTH = 240;
 
@@ -34,14 +36,20 @@ export const DashboardLayout: React.FC = () => {
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
       {/* App Bar */}
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBar
+        position="fixed"
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Dashboard
           </Typography>
-          <Button color="inherit" onClick={handleLogout}>
-            Logout
-          </Button>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <ThemeToggle />
+            <Button color="inherit" onClick={handleLogout}>
+              Logout
+            </Button>
+          </Box>
         </Toolbar>
       </AppBar>
 

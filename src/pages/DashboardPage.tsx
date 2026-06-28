@@ -1,6 +1,7 @@
-import { useAuth } from '@/shared/context';
 import { Box, Paper, Typography } from '@mui/material';
 import React from 'react';
+
+import { useAuth } from '@/shared/context';
 
 interface StatCard {
   title: string;

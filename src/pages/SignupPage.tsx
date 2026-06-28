@@ -1,4 +1,3 @@
-import { useAuth } from '@/shared/context';
 import {
   Box,
   Button,
@@ -10,6 +9,8 @@ import {
 } from '@mui/material';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+
+import { useAuth } from '@/shared/context';
 
 export const SignupPage: React.FC = () => {
   const navigate = useNavigate();
@@ -63,7 +64,11 @@ export const SignupPage: React.FC = () => {
     <Container maxWidth="sm">
       <Box sx={{ my: 8 }}>
         <Card sx={{ p: 4 }}>
-          <Typography variant="h4" component="h1" sx={{ mb: 3, textAlign: 'center' }}>
+          <Typography
+            variant="h4"
+            component="h1"
+            sx={{ mb: 3, textAlign: 'center' }}
+          >
             Sign Up
           </Typography>
 
@@ -122,7 +127,13 @@ export const SignupPage: React.FC = () => {
               disabled={isLoading}
               required
             />
-            <Button fullWidth variant="contained" sx={{ mt: 3 }} type="submit" disabled={isLoading}>
+            <Button
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3 }}
+              type="submit"
+              disabled={isLoading}
+            >
               {isLoading ? 'Signing up...' : 'Sign Up'}
             </Button>
           </form>

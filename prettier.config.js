@@ -1,10 +1,11 @@
 export default {
-  semi: true,
-  singleQuote: true,
+  printWidth: 80,
   tabWidth: 2,
-  trailingComma: 'es5',
-  printWidth: 100,
-  bracketSpacing: true,
-  arrowParens: 'always',
-  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-sort-json'],
+  trailingComma: 'all',
+  singleQuote: true,
+  semi: true,
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  importOrder: ['^@/(.*)$', '^[./]'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
 };
