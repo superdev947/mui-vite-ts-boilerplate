@@ -1,0 +1,20 @@
+# Code Owners for this repository
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners
+* @superdev947
+
+# Core infrastructure
+/vite.config.ts @superdev947
+/tsconfig.json @superdev947
+/eslintrc.config.js @superdev947
+/.prettierrc @superdev947
+
+# Redux and state management
+/src/redux/ @superdev947
+
+# Authentication
+/src/modules/auth/ @superdev947
+
+# Shared components and theme
+/src/shared/ @superdev947

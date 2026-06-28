@@ -177,6 +177,10 @@ This creates an optimized production build in the `dist/` directory.
 
 This is a boilerplate project. Feel free to use it as a starting point for your own projects or customize it to fit your needs.
 
+## Author
+
+- **superdev947** (super.dev.947@gmail.com)
+
 ## License
 
 MIT
