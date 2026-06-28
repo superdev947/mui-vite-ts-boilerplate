@@ -1,0 +1,7 @@
+{
+  "entry": ["src/main.tsx", "index.html"],
+  "ignore": ["dist/**", ".vite/**"],
+  "ignoreDependencies": [],
+  "ignoreExportsUsedInFile": true,
+  "project": ["src/**/*.{ts,tsx}"]
+}
