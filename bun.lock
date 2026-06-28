@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "material-ui-vite-ts-boilerplate",
+      "name": "mui-vite-ts-boilerplate",
       "dependencies": {
         "@emotion/react": "latest",
         "@emotion/styled": "latest",

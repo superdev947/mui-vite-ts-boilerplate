@@ -13,7 +13,7 @@ export const HomeHero: React.FC = () => {
       </Typography>
 
       <Typography variant="h5" sx={{ mb: 4, color: 'text.secondary' }}>
-        A modern Material UI application with React Router integration
+        A modern MUI application with React Router integration
       </Typography>
     </Box>
   );

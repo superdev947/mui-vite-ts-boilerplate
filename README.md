@@ -1,147 +1,186 @@
-# Material UI + Vite + TypeScript Boilerplate
+# Material-UI Vite TypeScript Boilerplate
 
-A modern, production-ready boilerplate for building web applications with [Material UI](https://mui.com), [Vite](https://vite.dev), and [TypeScript](https://www.typescriptlang.org).
+A modern, production-ready boilerplate for building scalable web applications with React, TypeScript, Material-UI (MUI), Vite, and Redux.
+
+## Features
+
+- **Vite** - Lightning-fast development and build tool
+- **Material-UI (MUI)** - Comprehensive UI component library
+- **TypeScript** - Full type safety and better developer experience
+- **Redux & Redux Toolkit** - Predictable state management
+- **Authentication** - Built-in authentication context and protected routes
+- **Theme Support** - Light/Dark mode with persistent theme state
+- **React Router** - Client-side routing with protected routes
+- **Responsive Design** - Mobile-first approach with MUI's responsive grid
+- **ESLint & Prettier** - Code quality and formatting
+- **Husky** - Git hooks for code quality checks
+
+## Tech Stack
+
+- **Frontend Framework:** React 18+
+- **Build Tool:** Vite
+- **Language:** TypeScript
+- **UI Library:** Material-UI (MUI)
+- **State Management:** Redux Toolkit
+- **Routing:** React Router v6+
+- **Styling:** Emotion (MUI's styling engine)
+- **Code Quality:** ESLint, Prettier, Dependency Cruiser
+- **Package Manager:** Bun
 
 ## Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org) (v16+)
-- [Bun](https://bun.sh) package manager
+
+- Bun (latest version)
 
 ### Installation
 
-Clone the repository and install dependencies:
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd mui-vite-ts-boilerplate
+```
 
+2. Install dependencies:
 ```bash
 bun install
 ```
 
-### Development
-
-Run the development server:
-
+3. Start the development server:
 ```bash
 bun run dev
 ```
 
-The app will be available at `http://localhost:5173`
+The application will be available at `http://localhost:5173` (or your configured port).
 
-### Build
+## Available Scripts
 
-Create a production build:
+### Development
+- `bun run dev` - Start the development server
 
-```bash
-bun run build
-```
+### Build & Preview
+- `bun run build` - Build for production
+- `bun run preview` - Preview the production build locally
 
-## Features
+### Code Quality
+- `bun run lint` - Run ESLint to check code quality
+- `bun run lint:fix` - Fix ESLint issues automatically
+- `bun run format` - Format code with Prettier
+- `bun run format:check` - Check if code is formatted correctly
 
-- **Material UI** - Comprehensive component library with Material Design
-- **Vite** - Next generation frontend tooling with lightning fast HMR
-- **TypeScript** - Full type safety for better development experience
-- **Redux** - Predictable state management for complex applications
-- **React Router** - Client-side routing for single-page applications
-- **Emotion** - CSS-in-JS styling solution (Material UI's default)
-- **ESLint & Prettier** - Code quality and formatting
-- **Husky** - Git hooks for code quality
+### Dependency Management
+- `bun run check:deps` - Check for unused dependencies
+- `bun run check:deps:fix` - Fix unused dependencies
+- `bun run check:circular` - Check for circular dependencies
+
+### Git Hooks
+- `bun run prepare` - Install Husky git hooks (runs automatically after bun install)
 
 ## Project Structure
 
 ```
 src/
-├── modules/                    # Feature-based modules
-│   ├── auth/                   # Example: Auth feature
-│   │   ├── components/         # Auth-specific components
-│   │   ├── hooks/              # Auth-specific hooks
-│   │   ├── types/              # Auth-specific types
-│   │   └── index.ts            # Module exports
-│   └── [feature-name]/         # Other feature modules
-│
-├── pages/                      # Page/route components
-│   ├── LoginPage.tsx
-│   ├── DashboardPage.tsx
-│   └── NotFoundPage.tsx
-│
-├── shared/                     # Shared across all modules
-│   ├── components/             # Reusable UI components
-│   ├── hooks/                  # Shared custom hooks
-│   ├── types/                  # Global TypeScript types
-│   ├── utils/                  # Helper functions & utilities
-│   ├── constants/              # App constants & configuration
-│   ├── styles/                 # Global styles
-│   └── index.ts                # Shared exports
-│
-├── App.tsx                     # Root component
-├── main.tsx                    # Application entry point
-└── vite-env.d.ts              # Vite environment types
+├── modules/
+│   └── auth/
+│       ├── components/
+│       │   ├── LoginForm.tsx
+│       │   └── SignupForm.tsx
+│       ├── context.tsx
+│       └── types.ts
+├── pages/
+│   ├── home/
+│   ├── dashboard/
+│   ├── profile/
+│   ├── settings/
+│   ├── adminUsers/
+│   ├── adminReports/
+│   ├── login/
+│   ├── signup/
+│   └── notFound/
+├── redux/
+│   ├── slices/
+│   │   ├── authSlice.ts
+│   │   ├── appSlice.ts
+│   │   └── themeSlice.ts
+│   ├── hooks.ts
+│   ├── store.ts
+│   └── types.ts
+├── shared/
+│   ├── components/
+│   │   ├── ProtectedRoute.tsx
+│   │   └── ThemeToggle.tsx
+│   ├── layouts/
+│   │   ├── PublicLayout.tsx
+│   │   ├── AdminLayout.tsx
+│   │   └── DashboardLayout.tsx
+│   ├── theme/
+│   │   ├── theme.ts
+│   │   ├── palette.ts
+│   │   ├── typography.ts
+│   │   └── components.ts
+│   ├── hooks/
+│   │   └── useTheme.ts
+│   └── context/
+│       └── ThemeContext.tsx
+├── App.tsx
+└── main.tsx
 ```
 
-### Structure Guidelines
+## Key Features Explained
 
-- **modules/** - Feature-based modules organized by domain (auth, dashboard, etc.)
-  - Each module should have its own components, hooks, and types
-  - Export public API via `index.ts` for clean imports
-  - Keep modules independent and reusable
+### Authentication
+- Built-in authentication slice and context
+- Protected routes for authenticated users only
+- Login and signup pages
 
-- **pages/** - Route/page components that compose features
-  - Maps to application routes
-  - Combines multiple modules and features
-  - Handles page-level layout and logic
+### State Management
+- Redux store with Redux Toolkit
+- Slices for auth, theme, and app state
+- Type-safe Redux hooks
 
-- **shared/** - Shared code used across modules
-  - **components/** - Generic UI components (buttons, modals, etc.)
-  - **hooks/** - Reusable React hooks (useLocalStorage, useFetch, etc.)
-  - **types/** - Global TypeScript types and interfaces
-  - **utils/** - Helper functions and utilities
-  - **constants/** - Configuration and constants
-  - **styles/** - Global theme and styles
+### Theme System
+- Light and dark mode support
+- Customizable MUI theme configuration
+- Theme persistence using Redux
 
-## State Management
+### Routing
+- Protected routes that check authentication
+- Multiple layouts for different page types (Public, Dashboard, Admin)
+- 404 Not Found page
 
-This boilerplate includes **Redux** for centralized state management:
+## Configuration Files
 
-- **Redux Store** - Centralized application state
-- **Redux Slices** - Modular state management with Redux Toolkit
-- **Authentication Context** - Redux-integrated auth state and routing
-- **Theme Management** - Global theme state via Redux
+- `vite.config.ts` - Vite configuration
+- `tsconfig.json` - TypeScript configuration
+- `eslintrc.config.js` - ESLint rules
+- `.prettierrc` - Prettier formatting rules
+- `.dependency-cruiser.json` - Dependency validation rules
+- `.husky/` - Git hooks configuration
 
-Redux state can be organized in the `modules/` directory alongside feature code. Use Redux DevTools for debugging.
+## Development Workflow
 
-## Routing
+1. Create a new branch for your feature
+2. Make your changes following the code style
+3. Run `bun run format` to format your code
+4. Run `bun run lint:fix` to fix linting issues
+5. Push your changes and create a pull request
 
-The application uses **React Router** for client-side navigation:
+## Building for Production
 
-- Declarative route definitions
-- Protected routes via authentication middleware
-- Nested routing support for complex page hierarchies
-- Lazy-loaded route components for code splitting
+```bash
+bun run build
+```
 
-## Available Scripts
-
-- `bun run dev` - Start development server
-- `bun run build` - Build for production
-- `bun run preview` - Preview production build locally
-- `bun run lint` - Run ESLint
-- `bun run format` - Format code with Prettier
+This creates an optimized production build in the `dist/` directory.
 
 ## Contributing
 
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+This is a boilerplate project. Feel free to use it as a starting point for your own projects or customize it to fit your needs.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT
 
-## Learn More
+## Support
 
-- [Material UI Documentation](https://mui.com)
-- [Vite Documentation](https://vite.dev)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [Redux Documentation](https://redux.js.org/)
-- [React Router Documentation](https://reactrouter.com/)
+For issues or questions, please open an issue in the repository.
